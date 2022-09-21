@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Form.css" />
+  </head>
+  <body>
+    <header class="header">
+        <div class="header-logo">
+          <svg
+          xmlns=“http://www.w3.org/2000/svg”
+          fill=“none”
+          class=“logo”
+          viewBox="0 0 40 40"
+          >
+          <path
+          fill=“#1A1A1A”
+          d="M19.38 30.3a9.67 9.67 0 0 0 9.67 9.7v-9.7h9.7a9.7 9.7 0 0 0-19.38 0Zm2.5-9.67H0L10.93 40l10.95-19.37ZM20.63 9.7a9.7 9.7 0 1 0-9.7 9.68V9.7h9.7ZM40 0H18.12l10.93 19.38L40 0Z"
+          ></path>
+        </svg>
+        <div class="company-name">DevRev</div>
+      </div>
+      
+    </header>
+    <div class="form-section">
+        <img src="https://app.devrev.ai/_next/image?url=%2Fstatic%2Flogin-girl.webp&w=2048&q=75" alt="" class="form-image">
+        <form action="" autocomplete="off">
+          <div class="form-heading hi-text  ">Welcome Onboard,</div>
+            <div class="form-description">As a member of the DevRev Beta Program, you can take part in shaping DevRev's product vision by test-driving pre-release versions and letting us know what you think
+            </div>
+            <div class="form-input-group">
+              <div class="label-group">              
+                  <label for="name" class="form-label">Name</label> <div class="required" id="required-name">* Required</div>
+              </div>
+              <input type="text" class="form-input" id="name"/>
+            </div>
+            <div class="form-input-group">  
+               <div class="label-group">              
+                <label for="email" class="form-label">Email</label>
+                <div class="required" id="required-email">* Required</div>
+                <div class="required" id="valid-email">Not Valid</div>
+              </div>
+              <input type="email" class="form-input" id="email"/>              
+            </div>
+            <div class="form-input-group">
+              <div class="label-group">              
+                <label for="phone" class="form-label">Phone</label>
+                <div class="required" id="required-phone">* Required</div>
+                <div class="required" id="valid-phone">Not Valid</div>
+              </div>
+              <input type="number" class="form-input" id="phone"/>              
+            </div>
+            <div class="form-input-group-2">
+              <div class="form-input-2">
+                <div class="label-group-gender-1">              
+                  <label for="gender" class="form-label-1">Gender</label>
+                  <div class="required" id="required-gender">* Required</div>
+                </div>
+                <select name="gender" id="gender" class="gender">
+                  <option value="" disabled selected>Select Option</option>
+                  <option value="male">Male</option>         
+                  <option value="female">Female</option>
+                </select>              
+              </div>
+              <div class="form-input-dob-2">
+                <div class="label-group-dob-1">              
+                  <label for="gender" class="form-label-2">Dob</label>
+                  <div class="required" id="required-dob">* Required</div>
+                </div>
+                <input type="date" id="dob" name="dob" class="dob-input" placeholder="DD/MM/YYYY">
+              </div>
+            </div>
+            <div class="form-input-group">
+              <div class="label-group">              
+                <label for="address" class="form-label">Address</label>
+                <div class="required" id="required-address">* Required</div>
+              </div>
+              <input type="text" class="form-input" id="address"/>
+            </div>
+            <div class="form-input-group">
+              <div class="label-group">              
+                <label for="password" class="form-label">Password</label>
+                <div class="required" id="required-password">* Required</div>                
+                <div class="required" id="min-password">Min 6 letters</div>
+
+              </div>
+              <input type="text" class="form-input" id="password"/>
+            </div>
+          <div class="button-section">
+            <button class="reset-button" id ="reset">Reset</button>
+            <button class="submit-button" id="submit" >Submit</button>
+          </div>
+        </form>
+    </div>
+    <script src="dist/script.js"></script>
+  </body>
+</html>

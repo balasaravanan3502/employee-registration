@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #373737; */
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 20px 0px;
+  /* margin-left: 10px; */
+}
+
+.header-logo {
+  display: flex;
+  cursor: pointer;
+}
+
+.company-name {
+  font-size: 40px;
+  margin-left: 20px;
+  /* color: white; */
+}
+
+.logo,
+svg {
+  width: 3.5rem;
+  padding-left: 20px;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+form {
+  width: min(600px, 100%);
+  border: 0.5px solid black;
+  background-color: #373737;
+  flex-wrap: wrap;
+  /* background-image: url("https://app.devrev.ai/_next/image?url=%2Fstatic%2Flogin-girl.webp&w=2048&q=75"); */
+}
+
+.form-heading {
+  color: white;
+  padding: 20px;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.hi-text {
+  font-size: 2.5rem;
+}
+
+.form-description {
+  color: gray;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.form-image {
+  width: min(600px, 100%);
+}
+
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.form-input-group-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  /* padding: 10px; */
+  /* margin-left: 10px; */
+  width: 93%;
+}
+
+.label-group {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.label-group-gender-1,
+.label-group-dob-1 {
+  display: flex;
+}
+select {
+  background-color: rgba(225, 221, 221, 0.364);
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-left: 22px;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.form-label,
+.form-label-1,  /* margin-left: 20px; */
+.form-label-2 {
+  font-size: 16px;
+  color: gray;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.form-label-1 {
+  margin-left: 5px;
+}
+
+.form-input,
+.dob-input {
+  padding: 5px;
+  width: 90%;
+  border-radius: 10px;
+  border: 1.3px solid rgb(214, 214, 214);
+  background-color: rgba(225, 221, 221, 0.364);
+  color: rgb(252, 251, 251);
+  font-size: 14px;
+}
+
+.form-input-dob-2 {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.form-input-2 {
+  /* background-color: #2122ff; */
+  /* margin-left: 15px; */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.form-input:focus,
+select:focus {
+  outline: none;
+  border: 1.5px solid white;
+}
+
+.required {
+  color: rgba(255, 0, 0, 0.649);
+  align-self: flex-start;
+  /* margin-top: 5px; */
+  margin-left: 20px;
+  display: none;
+  font-size: 15px;
+}
+
+.button-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex-grow: 1;
+  flex-basis: 20%;
+  padding: 10px;
+  margin: 2rem;
+  cursor: pointer;
+}
+.reset-button {
+  background-color: hsl(50, 100%, 50%);
+}
+
+.submit-button {
+  background-color: #2122ff;
+}
+
+textarea {
+  background-color: red;
+}
+
+@media only screen and (max-width: 500px) {
+  .form-input-group-2 {
+    justify-content: flex-start;
+  }
+
+  .form-label-2 {
+    margin-top: 20px;
+  }
+
+  .form-label-1 {
+    margin-left: 25px;
+  }
+}
