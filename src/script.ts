@@ -169,7 +169,7 @@ var resetForm = (e: any) => {
   (document.getElementById("email") as HTMLInputElement).value = "";
   (document.getElementById("phone") as HTMLInputElement).value = "";
   (document.getElementById("gender") as HTMLInputElement).value = "";
-  (document.getElementById("address") as HTMLInputElement).value = "";
+  // (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("dob") as HTMLInputElement).value = "";
   // (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("password") as HTMLInputElement).value = "";
