@@ -222,6 +222,10 @@ textarea {
   background-color: red;
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 @media only screen and (max-width: 500px) {
   .form-input-group-2 {
     justify-content: flex-start;
