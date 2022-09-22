@@ -137,8 +137,8 @@ var resetForm = (e) => {
     document.getElementById("gender").value = "";
     // (document.getElementById("address") as HTMLInputElement).value = "";
     document.getElementById("dob").value = "";
-    // (document.getElementById("address") as HTMLInputElement).value = "";
     document.getElementById("password").value = "";
+    document.getElementById("confirm-password").value = "";
 };
 var submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", submitForm);

@@ -171,8 +171,8 @@ var resetForm = (e: any) => {
   (document.getElementById("gender") as HTMLInputElement).value = "";
   // (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("dob") as HTMLInputElement).value = "";
-  // (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("password") as HTMLInputElement).value = "";
+  (document.getElementById("confirm-password") as HTMLInputElement).value = "";
 };
 
 var submitButton = document.getElementById("submit") as HTMLButtonElement;
