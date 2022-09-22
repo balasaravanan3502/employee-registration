@@ -91,6 +91,12 @@ var submitForm = (e: any) => {
       // address: userAddress,
       password: userPassword,
     });
+
+    console.log("!@3123");
+
+    var successDiv = document.getElementById("success") as HTMLElement;
+    successDiv.style.display = "flex";
+    successDiv.style.justifyContent = "center";
   }
 };
 

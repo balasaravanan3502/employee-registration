@@ -218,8 +218,13 @@ button {
   background-color: #2122ff;
 }
 
-textarea {
-  background-color: red;
+.success {
+  color: green;
+  font-weight: bolder;
+  display: flex;
+  font-size: 19px;
+  justify-content: center;
+  display: none;
 }
 
 ::-webkit-calendar-picker-indicator {

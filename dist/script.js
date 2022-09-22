@@ -81,6 +81,10 @@ var submitForm = (e) => {
             // address: userAddress,
             password: userPassword,
         });
+        console.log("!@3123");
+        var successDiv = document.getElementById("success");
+        successDiv.style.display = "flex";
+        successDiv.style.justifyContent = "center";
     }
 };
 var resetValidation = () => {
