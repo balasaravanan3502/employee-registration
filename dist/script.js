@@ -135,7 +135,7 @@ var resetForm = (e) => {
     document.getElementById("email").value = "";
     document.getElementById("phone").value = "";
     document.getElementById("gender").value = "";
-    document.getElementById("address").value = "";
+    // (document.getElementById("address") as HTMLInputElement).value = "";
     document.getElementById("dob").value = "";
     // (document.getElementById("address") as HTMLInputElement).value = "";
     document.getElementById("password").value = "";
