@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  /* background-color: #b54653; */
 }
 
 body {
@@ -27,14 +28,14 @@ header {
 }
 
 .company-name {
-  font-size: 40px;
+  font-size: 2rem;
   margin-left: 20px;
   /* color: white; */
 }
 
 .logo,
 svg {
-  width: 3.5rem;
+  width: 2rem;
   padding-left: 20px;
 }
 
@@ -57,18 +58,18 @@ form {
   color: white;
   padding: 20px;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 0.1rem;
   padding: 20px;
 }
 
 .hi-text {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .form-description {
   color: gray;
-  padding: 20px;
-  font-size: 18px;
+  padding: 0px 30px;
+  font-size: 13px;
 }
 
 .form-image {
@@ -81,7 +82,8 @@ form {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
+  /* width: 90%; */
 }
 
 .form-input-group-2 {
@@ -89,10 +91,10 @@ form {
   justify-content: space-around;
   align-items: center;
   margin: auto;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* padding: 10px; */
   /* margin-left: 10px; */
-  width: 93%;
+  width: 90%;
 }
 
 .label-group {
@@ -121,12 +123,19 @@ select {
   margin-left: 22px;
   margin-right: 20px;
   flex-grow: 1;
+  padding: 5px;
+  width: 85%;
+  border-radius: 10px;
+  border: 1.3px solid rgb(214, 214, 214);
+  background-color: rgba(225, 221, 221, 0.364);
+  color: rgb(252, 251, 251);
+  font-size: 14px;
 }
 
 .form-label,
 .form-label-1,  /* margin-left: 20px; */
 .form-label-2 {
-  font-size: 16px;
+  font-size: 15px;
   color: gray;
   display: block;
   margin-bottom: 10px;
@@ -141,7 +150,7 @@ select {
 .form-input,
 .dob-input {
   padding: 5px;
-  width: 90%;
+  width: 85%;
   border-radius: 10px;
   border: 1.3px solid rgb(214, 214, 214);
   background-color: rgba(225, 221, 221, 0.364);
@@ -154,6 +163,7 @@ select {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  /* min-width: 200px; */
 }
 
 .form-input-2 {
@@ -176,7 +186,7 @@ select:focus {
   /* margin-top: 5px; */
   margin-left: 20px;
   display: none;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .button-section {
@@ -201,7 +211,7 @@ button {
   cursor: pointer;
 }
 .reset-button {
-  background-color: hsl(50, 100%, 50%);
+  background-color: #ffd301;
 }
 
 .submit-button {
@@ -217,11 +227,7 @@ textarea {
     justify-content: flex-start;
   }
 
-  .form-label-2 {
-    margin-top: 20px;
-  }
-
   .form-label-1 {
-    margin-left: 25px;
+    margin-left: 10px;
   }
 }

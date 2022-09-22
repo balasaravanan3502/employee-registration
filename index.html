@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Onboarding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="Form.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header class="header">
@@ -43,23 +43,23 @@
             </div>
             <div class="form-input-group">
               <div class="label-group">              
-                  <label for="name" class="form-label">Name</label> <div class="required" id="required-name">* Required</div>
+                  <label for="name" class="form-label">Name *</label> <div class="required" id="required-name">Required</div>
               </div>
               <input type="text" class="form-input" id="name"/>
             </div>
             <div class="form-input-group">  
                <div class="label-group">              
-                <label for="email" class="form-label">Email</label>
-                <div class="required" id="required-email">* Required</div>
-                <div class="required" id="valid-email">Not Valid</div>
+                <label for="email" class="form-label">Email *</label>
+                <div class="required" id="required-email">Required</div>
+                <div class="required" id="valid-email">Not Valid Email Address</div>
               </div>
               <input type="email" class="form-input" id="email"/>              
             </div>
             <div class="form-input-group">
               <div class="label-group">              
-                <label for="phone" class="form-label">Phone</label>
-                <div class="required" id="required-phone">* Required</div>
-                <div class="required" id="valid-phone">Not Valid</div>
+                <label for="phone" class="form-label">Phone *</label>
+                <div class="required" id="required-phone">Required</div>
+                <div class="required" id="valid-phone">Phone number should have 10 digits</div>
               </div>
               <input type="number" class="form-input" id="phone"/>              
             </div>
@@ -67,7 +67,6 @@
               <div class="form-input-2">
                 <div class="label-group-gender-1">              
                   <label for="gender" class="form-label-1">Gender</label>
-                  <div class="required" id="required-gender">* Required</div>
                 </div>
                 <select name="gender" id="gender" class="gender">
                   <option value="" disabled selected>Select Option</option>
@@ -77,27 +76,34 @@
               </div>
               <div class="form-input-dob-2">
                 <div class="label-group-dob-1">              
-                  <label for="gender" class="form-label-2">Dob</label>
-                  <div class="required" id="required-dob">* Required</div>
+                  <label for="gender" class="form-label-2">Dob *</label>
+                  <div class="required" id="required-dob">Required</div>
                 </div>
                 <input type="date" id="dob" name="dob" class="dob-input" placeholder="DD/MM/YYYY">
               </div>
             </div>
-            <div class="form-input-group">
+            <!-- <div class="form-input-group">
               <div class="label-group">              
-                <label for="address" class="form-label">Address</label>
-                <div class="required" id="required-address">* Required</div>
+                <label for="address" class="form-label">Address *</label>
+                <div class="required" id="required-address">Required</div>
               </div>
               <input type="text" class="form-input" id="address"/>
-            </div>
+            </div> -->
             <div class="form-input-group">
               <div class="label-group">              
-                <label for="password" class="form-label">Password</label>
-                <div class="required" id="required-password">* Required</div>                
-                <div class="required" id="min-password">Min 6 letters</div>
-
+                <label for="password" class="form-label">Password *</label>
+                <div class="required" id="required-password">Required</div>                
+                <div class="required" id="min-password">Min 6 characters required</div>
               </div>
               <input type="text" class="form-input" id="password"/>
+            </div>       
+            <div class="form-input-group">
+              <div class="label-group">              
+                <label for="password" class="form-label">Confirm Password *</label>
+                <div class="required" id="required-confirm-password">Required</div>                
+                <div class="required" id="match-confirm-password">Password does not match</div>
+              </div>
+              <input type="text" class="form-input" id="confirm-password"/>
             </div>
           <div class="button-section">
             <button class="reset-button" id ="reset">Reset</button>

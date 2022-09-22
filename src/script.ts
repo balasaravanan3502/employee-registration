@@ -1,11 +1,19 @@
-var erroHandler = (id: string, requiredId: string) => {
-  var nameInput = document.getElementById("name") as HTMLInputElement;
-  nameInput.style.borderColor = "#EB1D36";
+var errorHandler = (id: string, requiredId: string) => {
+  var nameInput = document.getElementById(id) as HTMLInputElement;
+  nameInput.style.borderColor = "#b54653";
   nameInput.style.borderWidth = "1px";
 
-  var required = document.getElementById("required-name") as HTMLElement;
+  var required = document.getElementById(requiredId) as HTMLElement;
   required.style.display = "block";
 };
+
+const validateEmail = (email: string) => {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return true;
+  }
+  return false;
+};
+
 var submitForm = (e: any) => {
   e.preventDefault();
 
@@ -15,106 +23,61 @@ var submitForm = (e: any) => {
   var userPhone = (document.getElementById("phone") as HTMLInputElement).value;
   var userGender = (document.getElementById("gender") as HTMLInputElement)
     .value;
-  var userAddress = (document.getElementById("address") as HTMLInputElement)
-    .value;
+  // var userAddress = (document.getElementById("address") as HTMLInputElement)
+  //   .value;
   var userDob = (document.getElementById("dob") as HTMLInputElement).value;
   var userPassword = (document.getElementById("password") as HTMLInputElement)
     .value;
+  var userConfirmPassword = (
+    document.getElementById("confirm-password") as HTMLInputElement
+  ).value;
 
   var isValid = true;
 
   if (userName.length === 0) {
-    var nameInput = document.getElementById("name") as HTMLInputElement;
-    nameInput.style.borderColor = "#EB1D36";
-    nameInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-name") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("name", "required-name");
     isValid = false;
   }
 
   if (userEmail.length === 0) {
-    var nameInput = document.getElementById("email") as HTMLInputElement;
-    nameInput.style.borderColor = "#EB1D36";
-    nameInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-email") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("email", "required-email");
+    isValid = false;
+  } else if (!validateEmail(userEmail)) {
+    errorHandler("email", "valid-email");
     isValid = false;
   }
-  // else if (!userEmail.includes("@")) {
-  //   console.log(userEmail.includes("@"));
-
-  //   var nameInput = document.getElementById("email") as HTMLInputElement;
-  //   nameInput.style.borderColor = "#EB1D36";
-  //   nameInput.style.borderWidth = "1px";
-
-  //   var required = document.getElementById("valid-email") as HTMLElement;
-  //   required.style.display = "block";
-  //   isValid = false;
-  // }
 
   if (userPhone.length === 0) {
-    var nameInput = document.getElementById("phone") as HTMLInputElement;
-    nameInput.style.borderColor = "#EB1D36";
-    nameInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-phone") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("phone", "required-phone");
     isValid = false;
   } else if (userPhone.toString().length !== 10) {
-    var phoneInput = document.getElementById("phone") as HTMLInputElement;
-    phoneInput.style.borderColor = "#EB1D36";
-    phoneInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("valid-phone") as HTMLElement;
-    required.style.display = "block";
-    isValid = false;
-  }
-
-  if (userGender.length === 0) {
-    var genderInput = document.getElementById("gender") as HTMLInputElement;
-    genderInput.style.borderColor = "#EB1D36";
-    genderInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-gender") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("phone", "valid-phone");
     isValid = false;
   }
 
   if (userDob.length === 0) {
-    var dobInput = document.getElementById("dob") as HTMLInputElement;
-    dobInput.style.borderColor = "#EB1D36";
-    dobInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-dob") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("dob", "required-dob");
     isValid = false;
   }
 
-  if (userAddress.length === 0) {
-    var addressInput = document.getElementById("address") as HTMLInputElement;
-    addressInput.style.borderColor = "#EB1D36";
-    addressInput.style.borderWidth = "1px";
-
-    var required = document.getElementById("required-address") as HTMLElement;
-    required.style.display = "block";
-    isValid = false;
-  }
+  // if (userAddress.length === 0) {
+  //   errorHandler("address", "required-address");
+  //   isValid = false;
+  // }
 
   if (userPassword.length === 0) {
-    var passwordInput = document.getElementById("password") as HTMLInputElement;
-    passwordInput.style.borderColor = "#EB1D36";
-    passwordInput.style.borderWidth = "1px";
-    var required = document.getElementById("required-password") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("password", "required-password");
     isValid = false;
   } else if (userPassword.length < 6) {
-    var passwordInput = document.getElementById("password") as HTMLInputElement;
-    passwordInput.style.borderColor = "#EB1D36";
-    passwordInput.style.borderWidth = "1px";
-    var required = document.getElementById("min-password") as HTMLElement;
-    required.style.display = "block";
+    errorHandler("password", "min-password");
+    isValid = false;
+  }
+
+  if (userConfirmPassword.length === 0) {
+    errorHandler("confirm-password", "required-confirm-password");
+    isValid = false;
+  } else if (userConfirmPassword !== userPassword) {
+    errorHandler("confirm-password", "match-confirm-password");
     isValid = false;
   }
 
@@ -125,7 +88,7 @@ var submitForm = (e: any) => {
       phone: userPhone,
       gender: userGender,
       dob: userDob,
-      address: userAddress,
+      // address: userAddress,
       password: userPassword,
     });
   }
@@ -142,6 +105,8 @@ var resetValidation = () => {
   emailInput.style.borderColor = "rgb(214, 214, 214)";
   var required = document.getElementById("required-email") as HTMLElement;
   required.style.display = "none";
+  var required = document.getElementById("valid-email") as HTMLElement;
+  required.style.display = "none";
 
   var phoneInput = document.getElementById("phone") as HTMLInputElement;
   phoneInput.style.borderColor = "rgb(214, 214, 214)";
@@ -155,20 +120,17 @@ var resetValidation = () => {
   var genderInput = document.getElementById("gender") as HTMLInputElement;
   genderInput.style.borderColor = "rgb(214, 214, 214)";
 
-  var required = document.getElementById("required-gender") as HTMLElement;
-  required.style.display = "none";
-
   var dobInput = document.getElementById("dob") as HTMLInputElement;
   dobInput.style.borderColor = "rgb(214, 214, 214)";
 
   var required = document.getElementById("required-dob") as HTMLElement;
   required.style.display = "none";
 
-  var addressInput = document.getElementById("address") as HTMLInputElement;
-  addressInput.style.borderColor = "rgb(214, 214, 214)";
+  // var addressInput = document.getElementById("address") as HTMLInputElement;
+  // addressInput.style.borderColor = "rgb(214, 214, 214)";
 
-  var required = document.getElementById("required-address") as HTMLElement;
-  required.style.display = "none";
+  // var required = document.getElementById("required-address") as HTMLElement;
+  // required.style.display = "none";
 
   var passwordInput = document.getElementById("password") as HTMLInputElement;
   passwordInput.style.borderColor = "rgb(214, 214, 214)";
@@ -176,6 +138,20 @@ var resetValidation = () => {
   required.style.display = "none";
 
   var required = document.getElementById("min-password") as HTMLElement;
+  required.style.display = "none";
+
+  var passwordInput = document.getElementById(
+    "confirm-password"
+  ) as HTMLInputElement;
+  passwordInput.style.borderColor = "rgb(214, 214, 214)";
+  var required = document.getElementById(
+    "required-confirm-password"
+  ) as HTMLElement;
+  required.style.display = "none";
+
+  var required = document.getElementById(
+    "match-confirm-password"
+  ) as HTMLElement;
   required.style.display = "none";
 };
 
@@ -189,7 +165,7 @@ var resetForm = (e: any) => {
   (document.getElementById("gender") as HTMLInputElement).value = "";
   (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("dob") as HTMLInputElement).value = "";
-  (document.getElementById("address") as HTMLInputElement).value = "";
+  // (document.getElementById("address") as HTMLInputElement).value = "";
   (document.getElementById("password") as HTMLInputElement).value = "";
 };
 
