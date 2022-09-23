@@ -173,6 +173,9 @@ var resetForm = (e: any) => {
   (document.getElementById("dob") as HTMLInputElement).value = "";
   (document.getElementById("password") as HTMLInputElement).value = "";
   (document.getElementById("confirm-password") as HTMLInputElement).value = "";
+
+  var successDiv = document.getElementById("success") as HTMLElement;
+  successDiv.style.display = "none";
 };
 
 var submitButton = document.getElementById("submit") as HTMLButtonElement;
